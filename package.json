@@ -1,0 +1,28 @@
+{
+  "name": "hono-svelte",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "backend/contracts",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w frontend",
+    "dev:api": "npm run dev -w @hono-svelte/backend",
+    "dev:worker": "npm run worker -w @hono-svelte/backend",
+    "build": "npm run build -w frontend",
+    "build:contracts": "npm run build -w @hono-svelte/contracts",
+    "build:backend": "npm run build -w @hono-svelte/backend",
+    "check": "npm run check -w frontend",
+    "test": "vitest run --config tests/frontend/vitest.config.ts",
+    "test:watch": "vitest --config tests/frontend/vitest.config.ts",
+    "test:backend": "npm run test -w @hono-svelte/backend"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
